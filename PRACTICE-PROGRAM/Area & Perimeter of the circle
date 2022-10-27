@@ -1,0 +1,14 @@
+package java_basics;
+import java.util.*;
+public class nine {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		double a= sc.nextDouble();
+		//float b= sc.nextFloat();
+		System.out.println("perimeter is"+2*3.14159265358979*a);
+		System.out.println("area is="+3.14159265358979*a*a);
+
+	}
+
+}
