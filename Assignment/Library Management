@@ -1,0 +1,156 @@
+import java.util.*;
+import java.io.*;
+public class three
+{
+//******GLOBAL VARIABLE DECLARATION*******
+static String Name[],dept[];
+static int Roll_no[];
+static int c=0;
+//******GET INPUT FROM THE USER*******
+public static void insert(int a)
+{
+Scanner sc =new Scanner(System.in);
+System.out.print("Enter the number of person : ");
+int n=sc.nextInt();
+System.out.print("\n");
+Name = new String[n];
+dept = new String[n];
+Roll_no = new int[n];
+for(int i=0;i<n;i++)
+{
+if(a==0)
+System.out.print("Student :");
+else
+System.out.print("Staff :");
+System.out.println("\nEnter your name:");
+Name[i] =sc.next();
+System.out.println("Enter your dept:");
+dept[i] =sc.next();
+System.out.println("Enter your Id_no:");
+Roll_no[i] =sc.nextInt();
+System.out.println("\n");
+c++;
+}
+//*******PRINT FUNCTION IN FILE*******
+try
+{
+File file = new File("E:\\LibraryManagement.txt");
+BufferedWriter g=new BufferedWriter(new FileWriter("E:\\LibraryManagement.txt",true));
+PrintWriter pw=new PrintWriter(g);
+for(int j=0;j<n;j++)
+{
+if(a==0)
+pw.println("Student\t"+ Name[j]+"\t"+ dept[j]+"\t"+ Roll_no[j]);
+else
+pw.println("Staff\t"+ Name[j]+"\t"+ dept[j]+"\t"+ Roll_no[j]);
+}
+pw.println("\n");
+pw.close();
+}
+catch(Exception e)
+{
+e.printStackTrace();
+}
+}
+//********DISPLAY ALL INPUTS FUNCTION*********
+public static void display(int a)
+{
+try {
+File file = new File("E:\\LibraryManagement.txt");
+BufferedReader b=new BufferedReader(new FileReader("E:\\LibraryManagement.txt"));
+String str="";
+if(file.exists())
+{
+while((str=b.readLine())!=null)
+{
+System.out.println(str);
+}
+}
+else
+{
+System.out.println("File is not exists");
+}
+}
+catch(Exception e)
+{
+e.printStackTrace();
+}
+System.out.println("\n");
+}
+//*******STUDENT FUNCTION********
+public static void student()
+{
+Scanner sc =new Scanner(System.in);
+while(true)
+{
+System.out.print("1.Insert\n2.Display\n3.Exit\nEnter your choice : ");
+String ch = sc.next();
+System.out.print("\n");
+switch (ch)
+{
+case "1":
+insert(0);
+break;
+case "2":
+display(0);
+break;
+case "3":
+System.out.println("\n");
+return;
+default:
+System.out.println("Wrong choice :(\nEnter the correct choice : ");
+}
+}
+}
+//*******STAFF FUNCTION********
+public static void staff()
+{
+Scanner sc =new Scanner(System.in);
+while(true)
+{
+System.out.print("1.Insert\n2.Display\n3.Exit\nEnter your choice : ");
+String ch =sc.next();
+System.out.print("\n");
+System.out.print("\n");
+switch (ch)
+{
+case "1":
+insert(1);
+break;
+case "2":
+display(1);
+break;
+case "3":
+System.out.println("\n");
+return;
+default:
+System.out.print("Wrong choice :(\nEnter the correct choice : ");
+}
+}
+}
+//*******MAIN FUNCTION********
+public static void main(String[] args)
+{
+Scanner sc =new Scanner(System.in);
+while(true)
+{
+System.out.print("1.Student\n2.Staff\n3.Exit\nEnter your choice : ");
+String ch = sc.next();
+System.out.print("\n");
+switch (ch)
+{
+case "1":
+student();
+break;
+case "2":
+staff();
+break;
+case "3":
+System.out.println("THANK YOU :)");
+System.exit(0);
+default:
+System.out.print("Wrong choice :(\nEnter the correct choice : ");
+}
+}
+}
+}
