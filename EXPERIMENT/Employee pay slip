@@ -1,0 +1,169 @@
+import java.util.Scanner;
+public class Employee extends Programmer
+{
+public static void main(String args[]) {
+Scanner sc = new Scanner (System.in);
+int ch;
+while (true) {
+System.out.println("1. programmer\n2. assistant professor\n3. associate
+professor\n4. professor\n5. exit");
+System.out.println("enter your choice : ");
+ch = sc.nextInt();
+switch (ch) {
+case 1 :
+Programmer o1 = new Programmer();
+o1.programmer();
+break;
+case 2 :
+Programmer o2 = new Programmer();
+o2.ap();
+break;
+case 3 :
+Programmer o3 = new Programmer();
+o3.apro();
+break;
+case 4 :
+Programmer o4 = new Programmer();
+o4.prof();
+break;
+case 5 :
+System.exit(0);
+}
+System.out.println("\n");
+}
+}
+}
+public class Programmer extends Assistant_professor{
+public void programmer() {
+Scanner sc = new Scanner (System.in);
+double bp, da, hra, pf, scf, net;
+int emp_id;
+String emp_name, addr, mail_id, mobile;
+System.out.println("enter name of employee : ");
+emp_name = sc.nextLine();
+System.out.println("enter id number of employee : ");
+emp_id = sc.nextInt();
+System.out.println("enter address of employee : ");
+addr = sc.next();
+System.out.println("enter mobile number of employee : ");
+mobile = sc.next();
+System.out.println("enter mail-id of employee : ");
+mail_id = sc.next();
+System.out.println("enter basic pay : ");
+bp = sc.nextInt();
+da = 0.97* bp;
+hra = 0.1* bp;
+pf = 0.12 * bp;
+scf = 0.001 * bp;
+net = da+ bp + hra + pf + scf;
+System.out.println("Name : " +emp_name);
+System.out.println("Id : " +emp_id);
+System.out.println("Address : " +addr);
+System.out.println("Mobile Number : " +mobile);
+System.out.println("Mail-Id : " +mail_id);
+System.out.println("gross salary of programmer : " +bp);
+System.out.println("net salary of programmer : " +net);
+}
+}
+public class Assistant_professor extends Associate_professor{
+public void ap() {
+Scanner sc = new Scanner (System.in);
+double bp, da, hra, pf, scf, net;
+int ch, emp_id;
+String emp_name, addr, mail_id, mobile;
+System.out.println("enter name of employee : ");
+emp_name = sc.nextLine();
+System.out.println("enter id number of employee : ");
+emp_id = sc.nextInt();
+System.out.println("enter address of employee : ");
+addr = sc.next();
+System.out.println("enter mobile number of employee : ");
+mobile = sc.next();
+System.out.println("enter mail-id of employee : ");
+mail_id = sc.next();
+System.out.println("enter basic pay : ");
+bp = sc.nextInt();
+da = 0.97* bp;
+hra = 0.1* bp;
+pf = 0.12 * bp;
+scf = 0.001 * bp;
+net = da + bp + hra + pf + scf;
+System.out.println("Name : " +emp_name);
+System.out.println("Id : " +emp_id);
+System.out.println("Address : " +addr);
+System.out.println("Mobile Number : " +mobile);
+System.out.println("Mail-Id : " +mail_id);
+System.out.println("gross salary of programmer : " +bp);
+System.out.println("net salary of programmer : " +net);
+System.out.println("gross salary of programmer : " +bp);
+System.out.println("net salary of programmer : " +net);
+}
+}
+public class Associate_professor extends Professor{
+public void apro() {
+Scanner sc = new Scanner (System.in);
+double bp, da, hra, pf, scf, net;
+int ch, emp_id;
+String emp_name, addr, mail_id, mobile;
+System.out.println("enter name of employee : ");
+emp_name = sc.nextLine();
+System.out.println("enter id number of employee : ");
+emp_id = sc.nextInt();
+System.out.println("enter address of employee : ");
+addr = sc.next();
+System.out.println("enter mobile number of employee : ");
+mobile = sc.next();
+System.out.println("enter mail-id of employee : ");
+mail_id = sc.next();
+System.out.println("enter basic pay : ");
+bp = sc.nextInt();
+da = 0.97* bp;
+hra = 0.1* bp;
+pf = 0.12 * bp;
+scf = 0.001 * bp;
+net = da+ bp + hra + pf + scf;
+System.out.println("Name : " +emp_name);
+System.out.println("Id : " +emp_id);
+System.out.println("Address : " +addr);
+System.out.println("Mobile Number : " +mobile);
+System.out.println("Mail-Id : " +mail_id);
+System.out.println("gross salary of programmer : " +bp);
+System.out.println("net salary of programmer : " +net);
+System.out.println("gross salary of programmer : " +bp);
+System.out.println("net salary of programmer : " +net);
+}
+}
+public class Professor {
+public void prof() {
+Scanner sc = new Scanner (System.in);
+double bp, da, hra, pf, scf, net;
+int ch, emp_id;
+String emp_name, addr, mail_id, mobile;
+System.out.println("enter name of employee : ");
+emp_name = sc.nextLine();
+System.out.println("enter id number of employee : ");
+emp_id = sc.nextInt();
+System.out.println("enter address of employee : ");
+addr = sc.next();
+System.out.println("enter mobile number of employee : ");
+mobile = sc.next();
+System.out.println("enter mail-id of employee : ");
+mail_id = sc.next();
+System.out.println("enter basic pay : ");
+bp = sc.nextInt();
+da = 0.97* bp;
+hra = 0.1* bp;
+pf = 0.12 * bp;
+scf = 0.001 * bp;
+net = da+ bp + hra + pf + scf;
+System.out.println("Name : " +emp_name);
+System.out.println("Id : " +emp_id);
+System.out.println("Address : " +addr);
+System.out.println("Mobile Number : " +mobile);
+System.out.println("Mail-Id : " +mail_id);
+System.out.println("gross salary of programmer : " +bp);
+System.out.println("net salary of programmer : " +net);
+System.out.println("gross salary of programmer : " +bp);
+System.out.println("net salary of programmer : " +net);
+}
+}
