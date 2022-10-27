@@ -1,0 +1,77 @@
+package lis; 
+abstract class abst {
+	abstract void printArea();
+}
+import java.util.Scanner;
+public class circle extends abst
+{
+	void printArea()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the radius of the circle : ");
+		double r=sc.nextDouble();
+		double area=3.14*r*r;
+		System.out.println("Area of the circle = "+area);
+		System.out.println("\n");
+	}
+}import java.util.Scanner;
+public class rectangle extends circle
+{
+	void printArea()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the length and breadth of the rectangle : ");
+		int l=sc.nextInt();
+		int b=sc.nextInt();
+		int area=l*b;
+		System.out.println("Area of the rectangle = "+area);
+		System.out.println("\n");
+	}
+
+}import java.util.Scanner;
+public class triangle extends rectangle
+{
+	void printArea()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the breadth and height of the triangle : ");
+		int b=sc.nextInt();
+		int h=sc.nextInt();
+		double area=0.5*b*h;
+		System.out.println("Area of the rectangle = "+area);
+		System.out.println("\n");
+	}		
+}import java.util.Scanner;
+public class MAIN {
+	public static void main(String args[])
+	{
+		while(true)
+		{
+			Scanner sc=new Scanner(System.in);
+			System.out.println("1.Area of circle\n2.Area of the rectangle\n3.Area of the triangle\n4.Exit\nEnter your choice :");
+			String ch=sc.next();
+			switch(ch)
+			{
+				case "1":
+					abst o=new circle();
+					o.printArea();
+					break;
+				case "2":
+					abst o1=new rectangle();
+					o1.printArea();
+					break;
+				case "3":
+					abst o2=new triangle();
+					o2.printArea();
+					break;
+				case "4":
+					System.out.println("THANK YOU :)");
+					System.exit(0);
+				default:
+					System.out.println("Wrong choice :(");
+					System.out.println("Enter the correct choice : ");
+					
+			}
+		}
+	}
+}
