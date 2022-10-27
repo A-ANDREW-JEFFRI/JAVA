@@ -1,0 +1,25 @@
+package java_basics;
+public class ten 
+{
+public static void main(String[] args) 
+	{
+		int i,j;
+		for(i=0;i<7;i++)
+		{
+			for(j=0;j<25;j++)
+			{
+				if(j<=5)
+					System.out.print("*");
+				else
+					System.out.print("=");
+			}
+			
+		System.out.print("\n");
+		}
+		for(i=0;i<5;i++)
+		{
+			for(j=0;j<30;j++)
+				System.out.print("=");
+		System.out.print("\n");
+		}
+	}}
